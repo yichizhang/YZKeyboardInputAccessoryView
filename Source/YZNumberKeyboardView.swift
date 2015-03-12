@@ -11,6 +11,11 @@ import UIKit
 
 class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	weak var textInput:UITextInput?
+	lazy var dissmissButton:UIButton = {
+		let b = UIButton.buttonWithType(.Custom) as UIButton
+		b.setTitle("Close", forState: .Normal)
+		return b
+	}()
 	// UIInputViewAudioFeedback
 	var enableInputClicksWhenVisible:Bool {
 		return true
@@ -30,22 +35,38 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		}
 	}
 	
-	override init() {
-		super.init()
-		
+	func commonInit() {
 		self.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
 		self.backgroundColor = UIColor.blueColor()
+		
+		self.addSubview(self.dissmissButton)
+	}
+	
+	override init() {
+		super.init()
+		commonInit()
 	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		
-		self.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
-		self.backgroundColor = UIColor.blueColor()
+		commonInit()
 	}
 
 	required init(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
+	}
+	
+	override func layoutSubviews() {
+		superview?.layoutSubviews()
+		
+		self.dissmissButton.sizeToFit()
+		let size = self.dissmissButton.bounds.size
+		self.dissmissButton.frame = CGRect(
+			x: self.bounds.width - size.width,
+			y: -size.height,
+			width: size.width,
+			height: size.height
+		)
 	}
 	
 }
