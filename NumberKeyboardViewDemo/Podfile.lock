@@ -1,0 +1,13 @@
+PODS:
+  - CYRKeyboardButton (0.5.2):
+    - TurtleBezierPath
+  - TurtleBezierPath (1.0)
+
+DEPENDENCIES:
+  - CYRKeyboardButton
+
+SPEC CHECKSUMS:
+  CYRKeyboardButton: 6567751d3278168af5d05f14f198b778f0b0be8d
+  TurtleBezierPath: 94c917459aa4ccbdb9391e8332c77eabc4176326
+
+COCOAPODS: 0.35.0

@@ -14,6 +14,7 @@
 		1273C4241AAE4B0B0015744D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1273C4231AAE4B0B0015744D /* Images.xcassets */; };
 		1273C4271AAE4B0B0015744D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1273C4251AAE4B0B0015744D /* LaunchScreen.xib */; };
 		1273C4331AAE4B0C0015744D /* NumberKeyboardViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273C4321AAE4B0C0015744D /* NumberKeyboardViewDemoTests.swift */; };
+		6C808A59E2EE6A6CADACB6A5 /* libPods-NumberKeyboardViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1656F752273E2F152E1F9E18 /* libPods-NumberKeyboardViewDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06DAECE1C9FDDEBE8B1B1618 /* Pods-NumberKeyboardViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberKeyboardViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NumberKeyboardViewDemo/Pods-NumberKeyboardViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		121759931AB140C600F80750 /* YZNumberKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNumberKeyboardView.swift; sourceTree = "<group>"; };
+		121759951AB1641F00F80750 /* NumberKeyboardViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NumberKeyboardViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		1273C4171AAE4B0B0015744D /* NumberKeyboardViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberKeyboardViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1273C41B1AAE4B0B0015744D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1273C41C1AAE4B0B0015744D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,8 @@
 		1273C42C1AAE4B0B0015744D /* NumberKeyboardViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberKeyboardViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1273C4311AAE4B0C0015744D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1273C4321AAE4B0C0015744D /* NumberKeyboardViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberKeyboardViewDemoTests.swift; sourceTree = "<group>"; };
+		1656F752273E2F152E1F9E18 /* libPods-NumberKeyboardViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NumberKeyboardViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8743E828854E22BE42A2F77 /* Pods-NumberKeyboardViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberKeyboardViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NumberKeyboardViewDemo/Pods-NumberKeyboardViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C808A59E2EE6A6CADACB6A5 /* libPods-NumberKeyboardViewDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +71,8 @@
 				1273C4191AAE4B0B0015744D /* NumberKeyboardViewDemo */,
 				1273C42F1AAE4B0B0015744D /* NumberKeyboardViewDemoTests */,
 				1273C4181AAE4B0B0015744D /* Products */,
+				1B7068298E25F12661AA9345 /* Pods */,
+				68D13A95D5DD4BC487FE1510 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +90,7 @@
 			children = (
 				1273C41C1AAE4B0B0015744D /* AppDelegate.swift */,
 				1273C41E1AAE4B0B0015744D /* ViewController.swift */,
+				121759951AB1641F00F80750 /* NumberKeyboardViewDemo-Bridging-Header.h */,
 				1273C4201AAE4B0B0015744D /* Main.storyboard */,
 				1273C4231AAE4B0B0015744D /* Images.xcassets */,
 				1273C4251AAE4B0B0015744D /* LaunchScreen.xib */,
@@ -124,6 +133,23 @@
 			path = ../Source;
 			sourceTree = "<group>";
 		};
+		1B7068298E25F12661AA9345 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06DAECE1C9FDDEBE8B1B1618 /* Pods-NumberKeyboardViewDemo.debug.xcconfig */,
+				A8743E828854E22BE42A2F77 /* Pods-NumberKeyboardViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68D13A95D5DD4BC487FE1510 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1656F752273E2F152E1F9E18 /* libPods-NumberKeyboardViewDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1273C4361AAE4B0C0015744D /* Build configuration list for PBXNativeTarget "NumberKeyboardViewDemo" */;
 			buildPhases = (
+				7883BCD07EF7DA8292C890C1 /* Check Pods Manifest.lock */,
 				1273C4131AAE4B0B0015744D /* Sources */,
 				1273C4141AAE4B0B0015744D /* Frameworks */,
 				1273C4151AAE4B0B0015744D /* Resources */,
+				CB6A45F44D1D381A743AF279 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +246,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7883BCD07EF7DA8292C890C1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB6A45F44D1D381A743AF279 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NumberKeyboardViewDemo/Pods-NumberKeyboardViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1273C4131AAE4B0B0015744D /* Sources */ = {
@@ -347,21 +408,28 @@
 		};
 		1273C4371AAE4B0C0015744D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06DAECE1C9FDDEBE8B1B1618 /* Pods-NumberKeyboardViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NumberKeyboardViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NumberKeyboardViewDemo/NumberKeyboardViewDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1273C4381AAE4B0C0015744D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8743E828854E22BE42A2F77 /* Pods-NumberKeyboardViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NumberKeyboardViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NumberKeyboardViewDemo/NumberKeyboardViewDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
