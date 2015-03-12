@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121759941AB140C600F80750 /* YZNumberKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121759931AB140C600F80750 /* YZNumberKeyboardView.swift */; };
 		1273C41D1AAE4B0B0015744D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273C41C1AAE4B0B0015744D /* AppDelegate.swift */; };
 		1273C41F1AAE4B0B0015744D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273C41E1AAE4B0B0015744D /* ViewController.swift */; };
 		1273C4221AAE4B0B0015744D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1273C4201AAE4B0B0015744D /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121759931AB140C600F80750 /* YZNumberKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNumberKeyboardView.swift; sourceTree = "<group>"; };
 		1273C4171AAE4B0B0015744D /* NumberKeyboardViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberKeyboardViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1273C41B1AAE4B0B0015744D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1273C41C1AAE4B0B0015744D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		1273C43C1AAE4B1A0015744D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				121759931AB140C600F80750 /* YZNumberKeyboardView.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121759941AB140C600F80750 /* YZNumberKeyboardView.swift in Sources */,
 				1273C41F1AAE4B0B0015744D /* ViewController.swift in Sources */,
 				1273C41D1AAE4B0B0015744D /* AppDelegate.swift in Sources */,
 			);
@@ -414,6 +418,7 @@
 				1273C4381AAE4B0C0015744D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1273C4391AAE4B0C0015744D /* Build configuration list for PBXNativeTarget "NumberKeyboardViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				1273C43B1AAE4B0C0015744D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
