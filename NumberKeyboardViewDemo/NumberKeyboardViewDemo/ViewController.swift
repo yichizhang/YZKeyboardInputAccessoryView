@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		view.backgroundColor = UIColor.darkGrayColor()
+		textField.autocorrectionType = .No
 		YZNumberKeyboardView.attachTo(textInput: textField)
 	}
 
