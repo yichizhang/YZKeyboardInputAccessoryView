@@ -18,7 +18,9 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	var numberKeyButtonsContainerOriginY:CGFloat = 12
 	lazy var dissmissButton:UIButton = {
 		let b = UIButton.buttonWithType(.Custom) as UIButton
-		b.setImage(YZNumberKeyboardViewStyle.imageOfDismissKeyBoardImage, forState: .Normal)
+		let image = YZNumberKeyboardViewStyle.imageOfDismissKeyBoardImage
+		b.setImage(image, forState: .Normal)
+		b.setImage(image, forState: .Highlighted)
 		return b
 	}()
 	// UIInputViewAudioFeedback
@@ -48,10 +50,11 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 			width: 0,
 			height: numberKeyButtonsContainerHeight + numberKeyButtonsContainerOriginY
 		)
-		backgroundColor = UIColor.clearColor()
+		backgroundColor = YZNumberKeyboardViewStyle.keyboardBackgroundColor
+		//UIColor.clearColor()
 		
 		addSubview(numberKeyButtonsContainerView)
-		numberKeyButtonsContainerView.backgroundColor = UIColor(red:0.784, green:0.800, blue:0.824, alpha:1.000)
+		numberKeyButtonsContainerView.backgroundColor = YZNumberKeyboardViewStyle.keyboardBackgroundColor
 		for i in 1...10 {
 			let key = "\(i%10)"
 			let b = CYRKeyboardButton()
