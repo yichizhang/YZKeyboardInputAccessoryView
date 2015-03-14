@@ -31,7 +31,7 @@ struct YZKeyboardConstants {
 			// iPhone 6
 			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 11
-			keyHeight = 43
+			keyHeight = 43 // = width * 0.115
 			
 			topInset = 10
 			sideInset = 3
@@ -40,7 +40,7 @@ struct YZKeyboardConstants {
 			// iPhone 6 Plus or larger
 			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 10
-			keyHeight = 46
+			keyHeight = 46 // = width * 0.111
 			
 			topInset = 8
 			sideInset = 4
@@ -76,12 +76,12 @@ struct YZKeyboardConstants {
 			sideInset = 3
 			
 		default:
-			spaceInBetweenRows = 10
-			keyHeight = 40
+			spaceInBetweenKeys = 6
+			spaceInBetweenRows = 15
+			keyHeight = 39
 			
-			topInset = 6
+			topInset = 12
 			sideInset = 3
-			break
 		}
 		
 		keyboardInset = UIEdgeInsets(top: topInset, left: sideInset, bottom: sideInset, right: sideInset)
@@ -140,12 +140,12 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		let view = YZNumberKeyboardView()
 		
 		if(textInput.isKindOfClass(UITextField)) {
-			var t = textInput as UITextField;
+			var t = textInput as UITextField
 			t.inputAccessoryView = view
 			view.textField = t
 		}
 		else if(textInput.isKindOfClass(UITextView)) {
-			var t = textInput as UITextView;
+			var t = textInput as UITextView
 			t.inputAccessoryView = view
 			view.textView = t
 		}
@@ -162,7 +162,7 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		
 		addSubview(numberKeyButtonsContainerView)
 		numberKeyButtonsContainerView.backgroundColor = keyboardBackgroundColor
-		for i in 1...10 {
+		for i in 1...8{//10 {
 			let key = "\(i%10)"
 			let b = CYRKeyboardButton()
 			b.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin
@@ -201,13 +201,6 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	override func layoutSubviews() {
 		superview?.layoutSubviews()
 
-//		self.bounds = CGRect(
-//			x: 0,
-//			y: 0,
-//			width: bounds.width,
-//			height: heightOfView
-//		)
-
 		dismissTouchArea.frame = CGRect(
 			x: 0,
 			y: 0,
@@ -220,20 +213,23 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		let c = keyboardConstants
 		let inset = c.keyboardInset
 		
-		numberKeyButtonsContainerView.frame = CGRect(
-			x: inset.left,
-			y: dismissTouchAreaHeight + inset.top,
-			width: bounds.width - inset.left - inset.right,
-			height: c.keySize.height
-		)
-		
+		var lastX:CGFloat = 0
 		for (index, keyButton) in enumerate(numberKeyButtons) {
 			let i = CGFloat(index)
+			let x = (c.spaceInBetweenKeys + c.keySize.width) * i
 			keyButton.frame = CGRect(
-				origin: CGPoint(x: (c.spaceInBetweenKeys + c.keySize.width) * i, y: 0),
+				origin: CGPoint(x: x, y: 0),
 				size: c.keySize
 			)
+			lastX = x
 		}
+		
+		let keysWidth = lastX + c.keySize.width
+		numberKeyButtonsContainerView.frame = CGRect(
+			origin: CGPoint(x: bounds.midX - keysWidth / 2, y: dismissTouchAreaHeight + inset.top ),
+			size: CGSize(width: keysWidth, height: c.keySize.height)
+		)
+		println(numberKeyButtonsContainerView.frame)
 	}
 	
 	func deviceOrientationDidChange(notification:NSNotification) {
