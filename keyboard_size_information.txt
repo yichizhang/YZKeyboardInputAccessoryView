@@ -12,7 +12,7 @@ Horizontal space in between keys: 12
 Insets: (top: 24, left: 6, bottom: 6, right: 6)
 
 Screen size: 640 x 1136
-
+Keyboard height: 
 
 
 iPhone 6
@@ -26,6 +26,7 @@ Horizontal space in between keys: 12
 Insets: (top: 20, left: 6, bottom: 6, right: 6)
 
 Screen size: 750 x 1334
+Keyboard height: 432
 
 
 
@@ -40,4 +41,4 @@ Horizontal space in between keys: 18
 Insets: (top: 24, left: 12, bottom: 12, right: 12)
 
 Screen size: 1242 x 2208
-
+Keyboard height: 

@@ -12,50 +12,92 @@ import UIKit
 struct YZKeyboardConstants {
 	init(width:CGFloat) {
  
-		spaceInBetweenKeys = 6
+		var keyHeight:CGFloat = 0
+		
 		var topInset:CGFloat = 0
 		var sideInset:CGFloat = 0
 		
-		if width == 320 {
+		switch width {
+		case 320:
 			// iPhone 5 or older
+			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 15
 			keyHeight = 39
 			
 			topInset = 12
 			sideInset = 3
 			
-		} else if width == 375 {
+		case 375:
 			// iPhone 6
+			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 11
 			keyHeight = 43
 			
 			topInset = 10
 			sideInset = 3
 			
-		} else if width > 375 {
+		case 414:
 			// iPhone 6 Plus or larger
+			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 10
 			keyHeight = 46
 			
 			topInset = 8
 			sideInset = 4
 			
+		case 480:
+			// iPhone 4 landscape
+			spaceInBetweenKeys = 6
+			spaceInBetweenRows = 7
+			// keyWidth = 42
+			keyHeight = 33
+			
+			topInset = 5
+			sideInset = 3
+			
+		case 568:
+			// iPhone 5 landscape
+			spaceInBetweenKeys = 5
+			spaceInBetweenRows = 7
+			// keyWidth = 51
+			keyHeight = 33
+			
+			topInset = 5
+			sideInset = 3
+			
+		case 667...736:
+			// iPhone 6 landscape and iPhone 6 Plus landscape
+			spaceInBetweenKeys = 5
+			spaceInBetweenRows = 7
+			// keyWidth = 48
+			keyHeight = 33
+			
+			topInset = 6
+			sideInset = 3
+			
+		default:
+			spaceInBetweenRows = 10
+			keyHeight = 40
+			
+			topInset = 6
+			sideInset = 3
+			break
 		}
 		
 		keyboardInset = UIEdgeInsets(top: topInset, left: sideInset, bottom: sideInset, right: sideInset)
 		
 		let keyCount:CGFloat = 10
-		keyWidth =
+		let keyWidth:CGFloat =
 			(
 				(width - keyboardInset.left - keyboardInset.right) - ( (keyCount - 1) * spaceInBetweenKeys )
 			) / keyCount
 		
+		keySize = CGSize(width: keyWidth, height: keyHeight)
 	}
 	var spaceInBetweenKeys:CGFloat = 0
 	var keyboardInset = UIEdgeInsetsZero
 	var spaceInBetweenRows:CGFloat = 0
-	var keyHeight:CGFloat = 0
-	var keyWidth:CGFloat = 0
+	var keySize = CGSizeZero
 }
 
 class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
@@ -66,12 +108,14 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	var numberKeyButtons:[CYRKeyboardButton] = Array()
 	var numberKeyButtonsContainerView = UIView()
 	
-	let keyboardConstants = YZKeyboardConstants(width: UIScreen.mainScreen().bounds.width)
+	var keyboardConstants:YZKeyboardConstants {
+		return YZKeyboardConstants(width: UIScreen.mainScreen().bounds.width)
+	}
 	
 	var heightOfView:CGFloat {
 		let c = self.keyboardConstants
 		return
-			(c.spaceInBetweenRows - c.keyboardInset.top) + c.keyHeight + c.keyboardInset.top + self.dismissTouchAreaHeight
+			(c.spaceInBetweenRows - c.keyboardInset.top) + c.keySize.height + c.keyboardInset.top + self.dismissTouchAreaHeight
 	}
 	
 	lazy var dismissTouchArea:UIView = {
@@ -115,7 +159,6 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 			height: heightOfView
 		)
 		backgroundColor = keyboardBackgroundColor
-		//UIColor.clearColor()
 		
 		addSubview(numberKeyButtonsContainerView)
 		numberKeyButtonsContainerView.backgroundColor = keyboardBackgroundColor
@@ -133,6 +176,8 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		dismissTouchArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dissmissButtonTapped:"))
 		addSubview(dismissTouchArea)
 		
+		UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChange:", name: UIDeviceOrientationDidChangeNotification, object: nil)
 	}
 	
 	override init() {
@@ -148,9 +193,21 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	    fatalError("init(coder:) has not been implemented")
 	}
 	
+	deinit {
+		NSNotificationCenter.defaultCenter().removeObserver(self)
+		UIDevice.currentDevice().endGeneratingDeviceOrientationNotifications()
+	}
+	
 	override func layoutSubviews() {
 		superview?.layoutSubviews()
-		
+
+//		self.bounds = CGRect(
+//			x: 0,
+//			y: 0,
+//			width: bounds.width,
+//			height: heightOfView
+//		)
+
 		dismissTouchArea.frame = CGRect(
 			x: 0,
 			y: 0,
@@ -167,17 +224,23 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 			x: inset.left,
 			y: dismissTouchAreaHeight + inset.top,
 			width: bounds.width - inset.left - inset.right,
-			height: c.keyHeight
+			height: c.keySize.height
 		)
 		
 		for (index, keyButton) in enumerate(numberKeyButtons) {
 			let i = CGFloat(index)
 			keyButton.frame = CGRect(
-				x: (c.spaceInBetweenKeys + c.keyWidth) * i,
-				y: 0,
-				width: c.keyWidth,
-				height: c.keyHeight
+				origin: CGPoint(x: (c.spaceInBetweenKeys + c.keySize.width) * i, y: 0),
+				size: c.keySize
 			)
+		}
+	}
+	
+	func deviceOrientationDidChange(notification:NSNotification) {
+		if let viewConstraints = constraints() as? [NSLayoutConstraint] {
+			if let constraint = viewConstraints.first {
+				constraint.constant = self.heightOfView
+			}
 		}
 	}
 	
