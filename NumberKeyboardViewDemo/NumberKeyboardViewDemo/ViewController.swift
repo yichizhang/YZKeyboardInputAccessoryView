@@ -19,8 +19,9 @@ class ViewController: UIViewController {
 		view.backgroundColor = UIColor.darkGrayColor()
 		textField.autocorrectionType = .No
 		YZNumberKeyboardView.attachTo(textInput: textField)
+		
 	}
-
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
