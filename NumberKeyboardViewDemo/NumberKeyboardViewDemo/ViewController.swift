@@ -11,14 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
 	@IBOutlet weak var textField: UITextField!
-	
+	var numberKeyboardView = YZNumberKeyboardView()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		view.backgroundColor = UIColor.darkGrayColor()
 		textField.autocorrectionType = .No
-		YZNumberKeyboardView.attachTo(textInput: textField)
+		numberKeyboardView.attachTo(textInput: textField)
 		
 	}
 	

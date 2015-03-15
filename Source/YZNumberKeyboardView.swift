@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 struct YZKeyboardConstants {
-	init(width:CGFloat) {
+	init(keyboardSize: CGSize) {
  
+		let width = keyboardSize.width
+		
 		var keyHeight:CGFloat = 0
 		
 		var topInset:CGFloat = 0
@@ -108,14 +110,13 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	var numberKeyButtons:[CYRKeyboardButton] = Array()
 	var numberKeyButtonsContainerView = UIView()
 	
-	var keyboardConstants:YZKeyboardConstants {
-		return YZKeyboardConstants(width: UIScreen.mainScreen().bounds.width)
-	}
+	var keyboardConstants = YZKeyboardConstants(
+		keyboardSize: CGSize(width: UIScreen.mainScreen().bounds.width, height: 150)
+		)
 	
 	var heightOfView:CGFloat {
 		let c = self.keyboardConstants
-		return
-			(c.spaceInBetweenRows - c.keyboardInset.top) + c.keySize.height + c.keyboardInset.top + self.dismissTouchAreaHeight
+		return (c.spaceInBetweenRows - c.keyboardInset.top) + c.keySize.height + c.keyboardInset.top + self.dismissTouchAreaHeight
 	}
 	
 	lazy var dismissTouchArea:UIView = {
@@ -131,41 +132,36 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		return UIColor(red:0.784, green:0.800, blue:0.824, alpha:1.000)
 	}
 	
-	// UIInputViewAudioFeedback
+	// MARK: UIInputViewAudioFeedback
 	var enableInputClicksWhenVisible:Bool {
 		return true
 	}
 	
-	class func attachTo(#textInput:UITextInput) {
-		let view = YZNumberKeyboardView()
-		
+	// MARK: Attach to a text input.	
+	func attachTo(#textInput:UITextInput) {
 		if(textInput.isKindOfClass(UITextField)) {
 			var t = textInput as UITextField
-			t.inputAccessoryView = view
-			view.textField = t
+			t.inputAccessoryView = self
+			textField = t
 		}
 		else if(textInput.isKindOfClass(UITextView)) {
 			var t = textInput as UITextView
-			t.inputAccessoryView = view
-			view.textView = t
+			t.inputAccessoryView = self
+			textView = t
 		}
 	}
 	
+	// MARK: Init methods
 	func commonInit() {
-		self.frame = CGRect(
-			x: 0,
-			y: 0,
-			width: 0,
-			height: heightOfView
-		)
 		backgroundColor = keyboardBackgroundColor
 		
 		addSubview(numberKeyButtonsContainerView)
 		numberKeyButtonsContainerView.backgroundColor = keyboardBackgroundColor
-		for i in 1...8{//10 {
+		
+		let begin = 1, end = 8
+		for i in begin...end{
 			let key = "\(i%10)"
 			let b = CYRKeyboardButton()
-			b.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin
 			b.addTarget(self, action: "numberKeyTapped:", forControlEvents: .TouchUpInside)
 			b.input = key
 			
@@ -176,8 +172,14 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		dismissTouchArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dissmissButtonTapped:"))
 		addSubview(dismissTouchArea)
 		
-		UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChange:", name: UIDeviceOrientationDidChangeNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+		
+		self.frame = CGRect(
+			origin: CGPointZero,
+			size: CGSize(width: 0, height: heightOfView)
+		)
+		setUpSubviewFrames() 
 	}
 	
 	override init() {
@@ -195,12 +197,17 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	
 	deinit {
 		NSNotificationCenter.defaultCenter().removeObserver(self)
-		UIDevice.currentDevice().endGeneratingDeviceOrientationNotifications()
 	}
 	
+	// MARK: Set up layout
 	override func layoutSubviews() {
 		superview?.layoutSubviews()
-
+		
+		setUpSubviewFrames()
+	}
+	
+	func setUpSubviewFrames() {
+		
 		dismissTouchArea.frame = CGRect(
 			x: 0,
 			y: 0,
@@ -232,12 +239,34 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		println(numberKeyButtonsContainerView.frame)
 	}
 	
-	func deviceOrientationDidChange(notification:NSNotification) {
+	func setUpHeightConstraint() {
+		println(self.heightOfView)
 		if let viewConstraints = constraints() as? [NSLayoutConstraint] {
 			if let constraint = viewConstraints.first {
 				constraint.constant = self.heightOfView
 			}
 		}
+	}
+	
+	// MARK: Keyboard show
+	func keyboardWillShow(notification:NSNotification) {
+		if let info = notification.userInfo {
+			if let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
+				keyboardConstants = YZKeyboardConstants(keyboardSize: keyboardSize)
+			}
+		}
+		setUpSubviewFrames()
+		setUpHeightConstraint()
+	}
+	
+	func keyboardWillChangeFrame(notification:NSNotification) {
+		if let info = notification.userInfo {
+			if let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
+				keyboardConstants = YZKeyboardConstants(keyboardSize: keyboardSize)
+			}
+		}
+		setUpSubviewFrames()
+		setUpHeightConstraint()
 	}
 	
 	// MARK: Dissmiss button tapped.
