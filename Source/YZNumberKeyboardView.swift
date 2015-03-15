@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 
 struct YZKeyboardConstants {
-	init(keyboardSize: CGSize) {
- 
-		let width = keyboardSize.width
-		
+	init(keyboardSize: CGSize, useCalculatedWidth: Bool = true, maxInRow: Int = 10, useCalculatedHeight: Bool = false) {
+
 		var keyHeight:CGFloat = 0
+        var keyWidth:CGFloat = 0
 		
 		var topInset:CGFloat = 0
 		var sideInset:CGFloat = 0
 		
-		switch width {
+		switch keyboardSize.width {
 		case 320:
 			// iPhone 5 or older
 			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 15
+			keyWidth = 26
 			keyHeight = 39
 			
 			topInset = 12
@@ -33,6 +33,7 @@ struct YZKeyboardConstants {
 			// iPhone 6
 			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 11
+			keyWidth = 31.5
 			keyHeight = 43 // = width * 0.115
 			
 			topInset = 10
@@ -42,6 +43,7 @@ struct YZKeyboardConstants {
 			// iPhone 6 Plus or larger
 			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 10
+			keyWidth = 35
 			keyHeight = 46 // = width * 0.111
 			
 			topInset = 8
@@ -51,7 +53,7 @@ struct YZKeyboardConstants {
 			// iPhone 4 landscape
 			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 7
-			// keyWidth = 42
+			keyWidth = 42
 			keyHeight = 33
 			
 			topInset = 5
@@ -61,7 +63,7 @@ struct YZKeyboardConstants {
 			// iPhone 5 landscape
 			spaceInBetweenKeys = 5
 			spaceInBetweenRows = 7
-			// keyWidth = 51
+			keyWidth = 51
 			keyHeight = 33
 			
 			topInset = 5
@@ -71,7 +73,7 @@ struct YZKeyboardConstants {
 			// iPhone 6 landscape and iPhone 6 Plus landscape
 			spaceInBetweenKeys = 5
 			spaceInBetweenRows = 7
-			// keyWidth = 48
+			keyWidth = 48
 			keyHeight = 33
 			
 			topInset = 6
@@ -80,6 +82,7 @@ struct YZKeyboardConstants {
 		default:
 			spaceInBetweenKeys = 6
 			spaceInBetweenRows = 15
+            keyWidth = 0
 			keyHeight = 39
 			
 			topInset = 12
@@ -87,12 +90,17 @@ struct YZKeyboardConstants {
 		}
 		
 		keyboardInset = UIEdgeInsets(top: topInset, left: sideInset, bottom: sideInset, right: sideInset)
-		
-		let keyCount:CGFloat = 10
-		let keyWidth:CGFloat =
-			(
-				(width - keyboardInset.left - keyboardInset.right) - ( (keyCount - 1) * spaceInBetweenKeys )
-			) / keyCount
+
+		if useCalculatedWidth || keyWidth == 0 {
+            let keysCount = CGFloat(maxInRow)
+            keyWidth = ( (keyboardSize.width - keyboardInset.left - keyboardInset.right) - (keysCount - 1) * spaceInBetweenKeys ) / keysCount
+        }
+
+		if useCalculatedHeight {
+			// Doesn't work
+			let rowsCount = CGFloat(4)
+			keyHeight = ( (keyboardSize.height - keyboardInset.top - keyboardInset.bottom) - (rowsCount - 1) * spaceInBetweenRows ) / rowsCount
+        }
 		
 		keySize = CGSize(width: keyWidth, height: keyHeight)
 	}
@@ -124,7 +132,7 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		v.userInteractionEnabled = true
 		return v
 	}()
-	var dismissTouchAreaHeight:CGFloat = 12
+	var dismissTouchAreaHeight:CGFloat = 9
 	
 	var keyboardBackgroundColor:UIColor {
 		return UIColor(red:0.784, green:0.800, blue:0.824, alpha:1.000)
@@ -251,7 +259,7 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	private func configureKeyboardConstantsAndViewHeightUsing(notification:NSNotification) {
 		if let info = notification.userInfo {
 			if let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
-				keyboardConstants = YZKeyboardConstants(keyboardSize: keyboardSize)
+				keyboardConstants = YZKeyboardConstants(keyboardSize: keyboardSize, useCalculatedWidth: false)
 			}
 		}
 		configureHeightConstraint()

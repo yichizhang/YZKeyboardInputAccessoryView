@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
-	@IBOutlet weak var textField: UITextField!
+	@IBOutlet weak var textField1: UITextField!
+	@IBOutlet weak var textField2: UITextField!
+	@IBOutlet weak var textField3: UITextField!
+	
 	var numberKeyboardView = YZNumberKeyboardView()
 
 	override func viewDidLoad() {
@@ -18,8 +21,10 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		view.backgroundColor = UIColor.darkGrayColor()
-		textField.autocorrectionType = .No
-		numberKeyboardView.attachTo(textInput: textField)
+		
+		textField1.delegate = self
+		textField2.delegate = self
+		textField3.delegate = self
 		
 	}
 	
@@ -28,6 +33,12 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-
+	func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+		if textField == textField1 || textField == textField3 {
+			textField.autocorrectionType = .No
+			numberKeyboardView.attachTo(textInput: textField)
+		}
+		return true
+	}
 }
 
