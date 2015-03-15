@@ -14,7 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var textField2: UITextField!
 	@IBOutlet weak var textField3: UITextField!
 	
-	var numberKeyboardView = YZNumberKeyboardView()
+	var numberKeyboardView = YZNumberKeyboardInputAccessoryView()
+	var emojiKeyboardView = YZKeyboardInputAccessoryView(keys: "😀 😁 😂 😃 😄 😅 😆 😇".componentsSeparatedByString(" "))
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,9 +35,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-		if textField == textField1 || textField == textField3 {
+		if textField == textField1 {
 			textField.autocorrectionType = .No
 			numberKeyboardView.attachTo(textInput: textField)
+		}
+		if textField == textField3 {
+			textField.autocorrectionType = .No
+			emojiKeyboardView.attachTo(textInput: textField)
 		}
 		return true
 	}

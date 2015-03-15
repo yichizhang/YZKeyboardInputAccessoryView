@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		121759941AB140C600F80750 /* YZNumberKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121759931AB140C600F80750 /* YZNumberKeyboardView.swift */; };
-		1217599A1AB2698300F80750 /* YZNumberKeyboardViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121759991AB2698300F80750 /* YZNumberKeyboardViewStyle.swift */; };
+		121759941AB140C600F80750 /* YZKeyboardInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121759931AB140C600F80750 /* YZKeyboardInputAccessoryView.swift */; };
+		1217599A1AB2698300F80750 /* YZKeyboardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121759991AB2698300F80750 /* YZKeyboardStyle.swift */; };
 		1273C41D1AAE4B0B0015744D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273C41C1AAE4B0B0015744D /* AppDelegate.swift */; };
 		1273C41F1AAE4B0B0015744D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273C41E1AAE4B0B0015744D /* ViewController.swift */; };
 		1273C4221AAE4B0B0015744D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1273C4201AAE4B0B0015744D /* Main.storyboard */; };
@@ -30,9 +30,9 @@
 
 /* Begin PBXFileReference section */
 		06DAECE1C9FDDEBE8B1B1618 /* Pods-NumberKeyboardViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberKeyboardViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NumberKeyboardViewDemo/Pods-NumberKeyboardViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		121759931AB140C600F80750 /* YZNumberKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNumberKeyboardView.swift; sourceTree = "<group>"; };
+		121759931AB140C600F80750 /* YZKeyboardInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZKeyboardInputAccessoryView.swift; sourceTree = "<group>"; };
 		121759951AB1641F00F80750 /* NumberKeyboardViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NumberKeyboardViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		121759991AB2698300F80750 /* YZNumberKeyboardViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNumberKeyboardViewStyle.swift; sourceTree = "<group>"; };
+		121759991AB2698300F80750 /* YZKeyboardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZKeyboardStyle.swift; sourceTree = "<group>"; };
 		1273C4171AAE4B0B0015744D /* NumberKeyboardViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberKeyboardViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1273C41B1AAE4B0B0015744D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1273C41C1AAE4B0B0015744D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 		1273C43C1AAE4B1A0015744D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				121759931AB140C600F80750 /* YZNumberKeyboardView.swift */,
-				121759991AB2698300F80750 /* YZNumberKeyboardViewStyle.swift */,
+				121759931AB140C600F80750 /* YZKeyboardInputAccessoryView.swift */,
+				121759991AB2698300F80750 /* YZKeyboardStyle.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -288,10 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				121759941AB140C600F80750 /* YZNumberKeyboardView.swift in Sources */,
+				121759941AB140C600F80750 /* YZKeyboardInputAccessoryView.swift in Sources */,
 				1273C41F1AAE4B0B0015744D /* ViewController.swift in Sources */,
 				1273C41D1AAE4B0B0015744D /* AppDelegate.swift in Sources */,
-				1217599A1AB2698300F80750 /* YZNumberKeyboardViewStyle.swift in Sources */,
+				1217599A1AB2698300F80750 /* YZKeyboardStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

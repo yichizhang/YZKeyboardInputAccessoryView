@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input with number keyboard view" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-aA-KZa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number input accessory view" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-aA-KZa">
                                 <rect key="frame" x="16" y="20" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input without number keyboard view" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-ph-QlM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No input accessory view" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-ph-QlM">
                                 <rect key="frame" x="16" y="58" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input with number keyboard view" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1iX-cO-NZy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emoji input accessory view" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1iX-cO-NZy">
                                 <rect key="frame" x="16" y="96" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

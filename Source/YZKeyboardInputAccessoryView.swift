@@ -1,5 +1,5 @@
 //
-//  YZNumberKeyboardView.swift
+//  YZKeyboardInputAccessoryView.swift
 //  NumberKeyboardViewDemo
 //
 //  Created by Yichi on 12/03/2015.
@@ -110,7 +110,22 @@ struct YZKeyboardConstants {
 	var keySize = CGSizeZero
 }
 
-class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
+class YZNumberKeyboardInputAccessoryView : YZKeyboardInputAccessoryView {
+	init() {
+		let begin = 1, end = 10
+		var keys:[String] = Array()
+		for i in begin...end {
+			keys.append("\(i%10)")
+		}
+		super.init(keys: keys)
+	}
+
+	required init(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+	}
+}
+
+class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	
 	weak var textField:UITextField?
 	weak var textView:UITextView?
@@ -126,7 +141,7 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	}
 	
 	lazy var dismissTouchArea:UIView = {
-		let v = UIImageView(image: YZNumberKeyboardViewStyle.imageOfArrowLight)
+		let v = UIImageView(image: YZKeyboardStyle.imageOfArrowLight)
 		v.contentMode = UIViewContentMode.Center
 		v.backgroundColor = UIColor(red:0.684, green:0.700, blue:0.724, alpha:1.000)
 		v.userInteractionEnabled = true
@@ -145,6 +160,8 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	
 	// MARK: Attach to a text input.	
 	func attachTo(#textInput:UITextInput) {
+		textField = nil
+		textView = nil
 		if(textInput.isKindOfClass(UITextField)) {
 			var t = textInput as UITextField
 			t.inputAccessoryView = self
@@ -158,15 +175,15 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	}
 	
 	// MARK: Init methods
-	func commonInit() {
+	init(keys:[String]) {
+		super.init(frame: CGRectZero)
+		
 		backgroundColor = keyboardBackgroundColor
 		
 		addSubview(numberKeyButtonsContainerView)
 		numberKeyButtonsContainerView.backgroundColor = keyboardBackgroundColor
 		
-		let begin = 1, end = 8
-		for i in begin...end{
-			let key = "\(i%10)"
+		for key in keys{
 			let b = CYRKeyboardButton()
 			b.addTarget(self, action: "numberKeyTapped:", forControlEvents: .TouchUpInside)
 			b.input = key
@@ -182,17 +199,8 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
 	}
 	
-	override init() {
-		super.init()
-	}
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		commonInit()
-	}
-
 	required init(coder aDecoder: NSCoder) {
-	    fatalError("init(coder:) has not been implemented")
+		super.init(coder: aDecoder)
 	}
 	
 	deinit {
@@ -206,7 +214,7 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		configureSubviewFrames()
 	}
 	
-	func configureSubviewFrames() {
+	private func configureSubviewFrames() {
 		
 		dismissTouchArea.frame = CGRect(
 			x: 0,
