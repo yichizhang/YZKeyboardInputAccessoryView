@@ -110,9 +110,7 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	var numberKeyButtons:[CYRKeyboardButton] = Array()
 	var numberKeyButtonsContainerView = UIView()
 	
-	var keyboardConstants = YZKeyboardConstants(
-		keyboardSize: CGSize(width: UIScreen.mainScreen().bounds.width, height: 150)
-		)
+	var keyboardConstants = YZKeyboardConstants(keyboardSize: CGSizeZero)
 	
 	var heightOfView:CGFloat {
 		let c = self.keyboardConstants
@@ -174,12 +172,6 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
-		
-		self.frame = CGRect(
-			origin: CGPointZero,
-			size: CGSize(width: 0, height: heightOfView)
-		)
-		setUpSubviewFrames() 
 	}
 	
 	override init() {
@@ -203,10 +195,10 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	override func layoutSubviews() {
 		superview?.layoutSubviews()
 		
-		setUpSubviewFrames()
+		configureSubviewFrames()
 	}
 	
-	func setUpSubviewFrames() {
+	func configureSubviewFrames() {
 		
 		dismissTouchArea.frame = CGRect(
 			x: 0,
@@ -236,11 +228,9 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 			origin: CGPoint(x: bounds.midX - keysWidth / 2, y: dismissTouchAreaHeight + inset.top ),
 			size: CGSize(width: keysWidth, height: c.keySize.height)
 		)
-		println(numberKeyButtonsContainerView.frame)
 	}
 	
-	func setUpHeightConstraint() {
-		println(self.heightOfView)
+	func configureHeightConstraint() {
 		if let viewConstraints = constraints() as? [NSLayoutConstraint] {
 			if let constraint = viewConstraints.first {
 				constraint.constant = self.heightOfView
@@ -250,23 +240,21 @@ class YZNumberKeyboardView : UIView, UIInputViewAudioFeedback {
 	
 	// MARK: Keyboard show
 	func keyboardWillShow(notification:NSNotification) {
-		if let info = notification.userInfo {
-			if let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
-				keyboardConstants = YZKeyboardConstants(keyboardSize: keyboardSize)
-			}
-		}
-		setUpSubviewFrames()
-		setUpHeightConstraint()
+		configureKeyboardConstantsAndViewHeightUsing(notification)
+		setNeedsLayout()
 	}
 	
 	func keyboardWillChangeFrame(notification:NSNotification) {
+		configureKeyboardConstantsAndViewHeightUsing(notification)
+	}
+	
+	private func configureKeyboardConstantsAndViewHeightUsing(notification:NSNotification) {
 		if let info = notification.userInfo {
 			if let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
 				keyboardConstants = YZKeyboardConstants(keyboardSize: keyboardSize)
 			}
 		}
-		setUpSubviewFrames()
-		setUpHeightConstraint()
+		configureHeightConstraint()
 	}
 	
 	// MARK: Dissmiss button tapped.
