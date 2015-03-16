@@ -83,34 +83,4 @@ public class YZKeyboardStyle : NSObject {
         return Cache.imageOfArrowDark!
     }
 
-    //// Customization Infrastructure
-
-    @IBOutlet var arrowLightTargets: [AnyObject]! {
-        get { return Cache.arrowLightTargets }
-        set {
-            Cache.arrowLightTargets = newValue
-            for target: AnyObject in newValue {
-                target.setImage(YZKeyboardStyle.imageOfArrowLight)
-            }
-        }
-    }
-
-    @IBOutlet var arrowDarkTargets: [AnyObject]! {
-        get { return Cache.arrowDarkTargets }
-        set {
-            Cache.arrowDarkTargets = newValue
-            for target: AnyObject in newValue {
-                target.setImage(YZKeyboardStyle.imageOfArrowDark)
-            }
-        }
-    }
-
-}
-
-@objc protocol StyleKitSettableImage {
-    func setImage(image: UIImage!)
-}
-
-@objc protocol StyleKitSettableSelectedImage {
-    func setSelectedImage(image: UIImage!)
 }
