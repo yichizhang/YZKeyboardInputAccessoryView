@@ -113,6 +113,7 @@ struct YZKeyboardConstants {
 class YZNumberKeyboardInputAccessoryView : YZKeyboardInputAccessoryView {
 	init() {
 		let begin = 1, end = 10
+		
 		var keys:[String] = Array()
 		for i in begin...end {
 			keys.append("\(i%10)")
@@ -135,9 +136,8 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	
 	var keyboardConstants = YZKeyboardConstants(keyboardSize: CGSizeZero)
 	
-	var heightOfView:CGFloat {
-		let c = self.keyboardConstants
-		return (c.spaceInBetweenRows - c.keyboardInset.top) + c.keySize.height + c.keyboardInset.top + self.dismissTouchAreaHeight
+	class func heightWith(keyboardConstants c:YZKeyboardConstants, extraHeight:CGFloat = 9) -> CGFloat {
+		return (c.spaceInBetweenRows - c.keyboardInset.top) + c.keySize.height + c.keyboardInset.top + extraHeight
 	}
 	
 	lazy var dismissTouchArea:UIView = {
@@ -157,7 +157,7 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	var enableInputClicksWhenVisible:Bool {
 		return true
 	}
-	
+
 	// MARK: Attach to a text input.	
 	func attachTo(#textInput:UITextInput) {
 		textField = nil
@@ -176,7 +176,20 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	
 	// MARK: Init methods
 	init(keys:[String]) {
-		super.init(frame: CGRectZero)
+		var frame = CGRectZero
+		switch UIDevice.currentDevice().systemVersion.compare("8.0.0", options: NSStringCompareOptions.NumericSearch) {
+		case .OrderedSame, .OrderedDescending:
+			// iOS >= 8.0
+			break
+		case .OrderedAscending:
+			// iOS < 8.0
+			let c = YZKeyboardConstants(keyboardSize: UIScreen.mainScreen().bounds.size)
+			frame.size.height = YZKeyboardInputAccessoryView.heightWith(keyboardConstants: c)
+			
+			break
+		}
+		
+		super.init(frame: frame)
 		
 		backgroundColor = keyboardBackgroundColor
 		
@@ -247,9 +260,10 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	}
 	
 	func configureHeightConstraint() {
+		
 		if let viewConstraints = constraints() as? [NSLayoutConstraint] {
 			if let constraint = viewConstraints.first {
-				constraint.constant = self.heightOfView
+				constraint.constant = YZKeyboardInputAccessoryView.heightWith(keyboardConstants: keyboardConstants, extraHeight: dismissTouchAreaHeight)
 			}
 		}
 	}
@@ -281,7 +295,6 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	
 	// MARK: Number button tapped
 	func numberKeyTapped(sender:CYRKeyboardButton) {
-		UIDevice.currentDevice().playInputClick()
 		self.textView?.insertText(sender.input)
 		self.textField?.insertText(sender.input)
 	}
