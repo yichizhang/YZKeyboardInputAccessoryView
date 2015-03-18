@@ -14,15 +14,6 @@ import UIKit
 
 public class YZKeyboardStyle : NSObject {
 
-    //// Cache
-
-    private struct Cache {
-        static var imageOfArrowLight: UIImage?
-        static var arrowLightTargets: [AnyObject]?
-        static var imageOfArrowDark: UIImage?
-        static var arrowDarkTargets: [AnyObject]?
-    }
-
     //// Drawing Methods
 
     public class func drawArrowLight() {
@@ -56,31 +47,25 @@ public class YZKeyboardStyle : NSObject {
     //// Generated Images
 
     public class var imageOfArrowLight: UIImage {
-        if Cache.imageOfArrowLight != nil {
-            return Cache.imageOfArrowLight!
-        }
-
+		
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(10, 8), false, 0)
             YZKeyboardStyle.drawArrowLight()
 
-        Cache.imageOfArrowLight = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageOfArrowLight = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        return Cache.imageOfArrowLight!
+        return imageOfArrowLight
     }
 
     public class var imageOfArrowDark: UIImage {
-        if Cache.imageOfArrowDark != nil {
-            return Cache.imageOfArrowDark!
-        }
-
+		
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(10, 8), false, 0)
             YZKeyboardStyle.drawArrowDark()
 
-        Cache.imageOfArrowDark = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageOfArrowDark = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        return Cache.imageOfArrowDark!
+        return imageOfArrowDark
     }
 
 }
