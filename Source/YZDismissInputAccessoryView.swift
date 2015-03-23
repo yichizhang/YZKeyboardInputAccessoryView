@@ -49,13 +49,15 @@ class YZDismissInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	}
 	
 	// MARK: Init methods
-	override init() {
+	init(height:CGFloat = 9) {
+		
 		super.init(frame:CGRect(
 			origin: CGPointZero,
-			size: CGSize(width: 320, height: dismissTouchAreaHeight)
+			size: CGSize(width: 320, height: height)
 			)
 		)
 		
+		dismissTouchAreaHeight = height
 		backgroundColor = keyboardBackgroundColor
 		
 		dismissTouchArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dissmissButtonTapped:"))
