@@ -1,7 +1,7 @@
 YZKeyboardInputAccessoryView
 ============================
 
-A drop-in input accessory view that adds a dismiss button and an extra row of numbers, letters or emojis on top of the keyboard. It mimics the look, feel, and functionality of the native iOS keyboard.
+A drop-in input accessory view that adds a dismiss button and an extra row of characters (can be any numbers, letters or emojis) on top of the keyboard. It mimics the look, feel, and functionality of the native iOS keyboard.
 
 ![Screenshot](https://raw.githubusercontent.com/yichizhang/YZKeyboardInputAccessoryView/master/Screenshots/screenshot1.png)
 
