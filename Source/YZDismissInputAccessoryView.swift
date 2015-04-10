@@ -37,12 +37,12 @@ class YZDismissInputAccessoryView : UIView, UIInputViewAudioFeedback {
 		textField = nil
 		textView = nil
 		if(textInput.isKindOfClass(UITextField)) {
-			var t = textInput as UITextField
+			var t = textInput as! UITextField
 			t.inputAccessoryView = self
 			textField = t
 		}
 		else if(textInput.isKindOfClass(UITextView)) {
-			var t = textInput as UITextView
+			var t = textInput as! UITextView
 			t.inputAccessoryView = self
 			textView = t
 		}
