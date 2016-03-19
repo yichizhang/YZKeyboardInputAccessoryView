@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A331B9BB31EAA82CD14FA5A5DD7133C /* CYRKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BF4F4441F7C41C1E90D95D9ECE1476 /* CYRKeyboardButtonView.m */; };
+		0F0DA99115BA832DE67FE92B745764CB /* CYRKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C8149E3E19699D7A49D7F1B837604D /* CYRKeyboardButton.m */; };
+		30C473813598A0AC8BDE4386B359DEFB /* CYRKeyboardButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = A4A82B2E1752AD113193CB58403CEC9F /* CYRKeyboardButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3334A104E89F88E582389646FB733A7A /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E650F41A9C99F9E455D461249AE312 /* TurtleBezierPath.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		454B062A0FDCE64FC7ACDBF9E680CFA0 /* CYRKeyboardButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E089964ABD28BC4A06A3D04730BA3 /* CYRKeyboardButton-dummy.m */; };
+		595AD5838DBCF18D497E2E5416AD9C22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		69749F315B110213C52808C9D9F504BE /* Pods-NumberKeyboardViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54586FADD21A0145E89DAA8265F86CD9 /* Pods-NumberKeyboardViewDemo-dummy.m */; };
+		8BF06675502991758302E1C743689003 /* CYRKeyboardButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 86FC292E75BF5FF1A08C48ADDCABB1FC /* CYRKeyboardButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93C2DEFB45037A834F6C4B11C5FBFDFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		B3D910953E1C2B81CC3FA9AA642D2C7B /* TurtleBezierPath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D99BE45618DB2B13A56C3E1419930968 /* TurtleBezierPath-dummy.m */; };
+		D3241619A69DE162A317327904CA91E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		F5504A50281AF72552B1B0FD3A06F67F /* TurtleBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DD9D983B88E1A770860BB4AC383ACA6 /* TurtleBezierPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E86047D26124B87D4EB7E19032AF25A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E43D93EC783DD7AFE20A3F6BBBD2D2E5;
+			remoteInfo = TurtleBezierPath;
+		};
+		4D413CA07DC7E709F2D5A5D48E240F74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35D1EE3D84538145C146BA5B5B3CCFCF;
+			remoteInfo = CYRKeyboardButton;
+		};
+		F1F21C18BCD59F168909FEB8FCF98387 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E43D93EC783DD7AFE20A3F6BBBD2D2E5;
+			remoteInfo = TurtleBezierPath;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11E5F6313D2B392DD9F81CD91A260F29 /* Pods-NumberKeyboardViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NumberKeyboardViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		206242ADAFA7958271FBA12069858A4A /* CYRKeyboardButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CYRKeyboardButton.xcconfig; sourceTree = "<group>"; };
+		21427672CEF3D243C6647F6ACAC3D17A /* CYRKeyboardButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CYRKeyboardButton-prefix.pch"; sourceTree = "<group>"; };
+		2B4E089964ABD28BC4A06A3D04730BA3 /* CYRKeyboardButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CYRKeyboardButton-dummy.m"; sourceTree = "<group>"; };
+		3DD9D983B88E1A770860BB4AC383ACA6 /* TurtleBezierPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TurtleBezierPath.h; path = TurtleBezierPath/TurtleBezierPath.h; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4FDC24D96A0249BC37297699E5974749 /* libPods-NumberKeyboardViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NumberKeyboardViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54586FADD21A0145E89DAA8265F86CD9 /* Pods-NumberKeyboardViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NumberKeyboardViewDemo-dummy.m"; sourceTree = "<group>"; };
+		56FB09F5033CBA0E769B91F4A08A6815 /* libTurtleBezierPath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTurtleBezierPath.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A163FFD326FA46A31BF57CA26B583F2 /* TurtleBezierPath-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TurtleBezierPath-prefix.pch"; sourceTree = "<group>"; };
+		60BF4F4441F7C41C1E90D95D9ECE1476 /* CYRKeyboardButtonView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButtonView.m; path = CYRKeyboardButton/CYRKeyboardButtonView.m; sourceTree = "<group>"; };
+		767566F5580204E4CBB65DD4C66DEFE6 /* Pods-NumberKeyboardViewDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NumberKeyboardViewDemo-frameworks.sh"; sourceTree = "<group>"; };
+		86FC292E75BF5FF1A08C48ADDCABB1FC /* CYRKeyboardButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CYRKeyboardButton.h; path = CYRKeyboardButton/CYRKeyboardButton.h; sourceTree = "<group>"; };
+		984C14848460A60495AD8656E9465B68 /* Pods-NumberKeyboardViewDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NumberKeyboardViewDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A205D9F495DCB2E008B358065B20E883 /* TurtleBezierPath.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TurtleBezierPath.xcconfig; sourceTree = "<group>"; };
+		A4A82B2E1752AD113193CB58403CEC9F /* CYRKeyboardButtonView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CYRKeyboardButtonView.h; path = CYRKeyboardButton/CYRKeyboardButtonView.h; sourceTree = "<group>"; };
+		B886E30572E1E95E1E6DAD155ED72F66 /* libCYRKeyboardButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCYRKeyboardButton.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8C8149E3E19699D7A49D7F1B837604D /* CYRKeyboardButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CYRKeyboardButton.m; path = CYRKeyboardButton/CYRKeyboardButton.m; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D7EB7C4F4D137279F5FF5D0CA1AD24A0 /* Pods-NumberKeyboardViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NumberKeyboardViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D99BE45618DB2B13A56C3E1419930968 /* TurtleBezierPath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TurtleBezierPath-dummy.m"; sourceTree = "<group>"; };
+		E4E650F41A9C99F9E455D461249AE312 /* TurtleBezierPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TurtleBezierPath.m; path = TurtleBezierPath/TurtleBezierPath.m; sourceTree = "<group>"; };
+		F5561E1A1D2AC2735E665C5A6504D5DD /* Pods-NumberKeyboardViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NumberKeyboardViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		F961E9461D2BEDD3C399A87D6B422FD6 /* Pods-NumberKeyboardViewDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NumberKeyboardViewDemo-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5421476AAF83F271B7DC731278CB2837 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				595AD5838DBCF18D497E2E5416AD9C22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A459D6E474E80CB8079115C16CCA1C67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3241619A69DE162A317327904CA91E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6CAA369B3E6FA59D21331332A30E9E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93C2DEFB45037A834F6C4B11C5FBFDFD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		015E0C4E888FB9578FCC23B5D99E9827 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A205D9F495DCB2E008B358065B20E883 /* TurtleBezierPath.xcconfig */,
+				D99BE45618DB2B13A56C3E1419930968 /* TurtleBezierPath-dummy.m */,
+				5A163FFD326FA46A31BF57CA26B583F2 /* TurtleBezierPath-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TurtleBezierPath";
+			sourceTree = "<group>";
+		};
+		3CE819C81F90EE2C08EAF2D81C3FF8F7 /* Pods-NumberKeyboardViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				984C14848460A60495AD8656E9465B68 /* Pods-NumberKeyboardViewDemo-acknowledgements.markdown */,
+				F5561E1A1D2AC2735E665C5A6504D5DD /* Pods-NumberKeyboardViewDemo-acknowledgements.plist */,
+				54586FADD21A0145E89DAA8265F86CD9 /* Pods-NumberKeyboardViewDemo-dummy.m */,
+				767566F5580204E4CBB65DD4C66DEFE6 /* Pods-NumberKeyboardViewDemo-frameworks.sh */,
+				F961E9461D2BEDD3C399A87D6B422FD6 /* Pods-NumberKeyboardViewDemo-resources.sh */,
+				11E5F6313D2B392DD9F81CD91A260F29 /* Pods-NumberKeyboardViewDemo.debug.xcconfig */,
+				D7EB7C4F4D137279F5FF5D0CA1AD24A0 /* Pods-NumberKeyboardViewDemo.release.xcconfig */,
+			);
+			name = "Pods-NumberKeyboardViewDemo";
+			path = "Target Support Files/Pods-NumberKeyboardViewDemo";
+			sourceTree = "<group>";
+		};
+		3ED457B38E938AF264AD7B273ED11886 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CE819C81F90EE2C08EAF2D81C3FF8F7 /* Pods-NumberKeyboardViewDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		74A0135502565FDA7F9BCA2711ACB9FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D82AFBA7A1544EC017119E358844E300 /* CYRKeyboardButton */,
+				D7873E9CD93BADD6588674570E0637F3 /* TurtleBezierPath */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				74A0135502565FDA7F9BCA2711ACB9FA /* Pods */,
+				C7402365AA338D0EB819063D8AAA2175 /* Products */,
+				3ED457B38E938AF264AD7B273ED11886 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C7402365AA338D0EB819063D8AAA2175 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B886E30572E1E95E1E6DAD155ED72F66 /* libCYRKeyboardButton.a */,
+				4FDC24D96A0249BC37297699E5974749 /* libPods-NumberKeyboardViewDemo.a */,
+				56FB09F5033CBA0E769B91F4A08A6815 /* libTurtleBezierPath.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9F470E9FC747473FA9048341BDAAAF2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				206242ADAFA7958271FBA12069858A4A /* CYRKeyboardButton.xcconfig */,
+				2B4E089964ABD28BC4A06A3D04730BA3 /* CYRKeyboardButton-dummy.m */,
+				21427672CEF3D243C6647F6ACAC3D17A /* CYRKeyboardButton-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CYRKeyboardButton";
+			sourceTree = "<group>";
+		};
+		D7873E9CD93BADD6588674570E0637F3 /* TurtleBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				3DD9D983B88E1A770860BB4AC383ACA6 /* TurtleBezierPath.h */,
+				E4E650F41A9C99F9E455D461249AE312 /* TurtleBezierPath.m */,
+				015E0C4E888FB9578FCC23B5D99E9827 /* Support Files */,
+			);
+			path = TurtleBezierPath;
+			sourceTree = "<group>";
+		};
+		D82AFBA7A1544EC017119E358844E300 /* CYRKeyboardButton */ = {
+			isa = PBXGroup;
+			children = (
+				86FC292E75BF5FF1A08C48ADDCABB1FC /* CYRKeyboardButton.h */,
+				B8C8149E3E19699D7A49D7F1B837604D /* CYRKeyboardButton.m */,
+				A4A82B2E1752AD113193CB58403CEC9F /* CYRKeyboardButtonView.h */,
+				60BF4F4441F7C41C1E90D95D9ECE1476 /* CYRKeyboardButtonView.m */,
+				C9F470E9FC747473FA9048341BDAAAF2 /* Support Files */,
+			);
+			path = CYRKeyboardButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		029FE57B442460E99CADF7B59DB730DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5504A50281AF72552B1B0FD3A06F67F /* TurtleBezierPath.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		239196FB3E19358F316E9E4744F99B43 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF06675502991758302E1C743689003 /* CYRKeyboardButton.h in Headers */,
+				30C473813598A0AC8BDE4386B359DEFB /* CYRKeyboardButtonView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0DAB9898FA73AC4E1135C9E72B154EA2 /* Pods-NumberKeyboardViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD178DE2ED1F5F155297CB5A639849B /* Build configuration list for PBXNativeTarget "Pods-NumberKeyboardViewDemo" */;
+			buildPhases = (
+				186E938A33448FE6D3CDD7F68AB610B6 /* Sources */,
+				D6CAA369B3E6FA59D21331332A30E9E8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0496BCF0BE156619F9C5BF5DF3841107 /* PBXTargetDependency */,
+				DFF91617B5E3AC5F5450AE3E2FAA4616 /* PBXTargetDependency */,
+			);
+			name = "Pods-NumberKeyboardViewDemo";
+			productName = "Pods-NumberKeyboardViewDemo";
+			productReference = 4FDC24D96A0249BC37297699E5974749 /* libPods-NumberKeyboardViewDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		35D1EE3D84538145C146BA5B5B3CCFCF /* CYRKeyboardButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFA21DE09B2424FE95759D75C80930F5 /* Build configuration list for PBXNativeTarget "CYRKeyboardButton" */;
+			buildPhases = (
+				F0DE05BC850A2E01D683127AB07CF527 /* Sources */,
+				A459D6E474E80CB8079115C16CCA1C67 /* Frameworks */,
+				239196FB3E19358F316E9E4744F99B43 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FAF098C7D301B1EFD907C88E1E4FA95 /* PBXTargetDependency */,
+			);
+			name = CYRKeyboardButton;
+			productName = CYRKeyboardButton;
+			productReference = B886E30572E1E95E1E6DAD155ED72F66 /* libCYRKeyboardButton.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E43D93EC783DD7AFE20A3F6BBBD2D2E5 /* TurtleBezierPath */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 236C89D7B318B58DD96D3A2E847BEA97 /* Build configuration list for PBXNativeTarget "TurtleBezierPath" */;
+			buildPhases = (
+				71BCFEE00E9713B8EF8A9187008E6C1A /* Sources */,
+				5421476AAF83F271B7DC731278CB2837 /* Frameworks */,
+				029FE57B442460E99CADF7B59DB730DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TurtleBezierPath;
+			productName = TurtleBezierPath;
+			productReference = 56FB09F5033CBA0E769B91F4A08A6815 /* libTurtleBezierPath.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C7402365AA338D0EB819063D8AAA2175 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35D1EE3D84538145C146BA5B5B3CCFCF /* CYRKeyboardButton */,
+				0DAB9898FA73AC4E1135C9E72B154EA2 /* Pods-NumberKeyboardViewDemo */,
+				E43D93EC783DD7AFE20A3F6BBBD2D2E5 /* TurtleBezierPath */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		186E938A33448FE6D3CDD7F68AB610B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69749F315B110213C52808C9D9F504BE /* Pods-NumberKeyboardViewDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71BCFEE00E9713B8EF8A9187008E6C1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D910953E1C2B81CC3FA9AA642D2C7B /* TurtleBezierPath-dummy.m in Sources */,
+				3334A104E89F88E582389646FB733A7A /* TurtleBezierPath.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0DE05BC850A2E01D683127AB07CF527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				454B062A0FDCE64FC7ACDBF9E680CFA0 /* CYRKeyboardButton-dummy.m in Sources */,
+				0F0DA99115BA832DE67FE92B745764CB /* CYRKeyboardButton.m in Sources */,
+				0A331B9BB31EAA82CD14FA5A5DD7133C /* CYRKeyboardButtonView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0496BCF0BE156619F9C5BF5DF3841107 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CYRKeyboardButton;
+			target = 35D1EE3D84538145C146BA5B5B3CCFCF /* CYRKeyboardButton */;
+			targetProxy = 4D413CA07DC7E709F2D5A5D48E240F74 /* PBXContainerItemProxy */;
+		};
+		9FAF098C7D301B1EFD907C88E1E4FA95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TurtleBezierPath;
+			target = E43D93EC783DD7AFE20A3F6BBBD2D2E5 /* TurtleBezierPath */;
+			targetProxy = F1F21C18BCD59F168909FEB8FCF98387 /* PBXContainerItemProxy */;
+		};
+		DFF91617B5E3AC5F5450AE3E2FAA4616 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TurtleBezierPath;
+			target = E43D93EC783DD7AFE20A3F6BBBD2D2E5 /* TurtleBezierPath */;
+			targetProxy = 1E86047D26124B87D4EB7E19032AF25A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0585048E43C17589258EBE87AB5F2991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A205D9F495DCB2E008B358065B20E883 /* TurtleBezierPath.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TurtleBezierPath/TurtleBezierPath-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		215A3212E30E81E6C092EC3D5B7B2B27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11E5F6313D2B392DD9F81CD91A260F29 /* Pods-NumberKeyboardViewDemo.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		89DF8923A69C3E4685939720113729A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7EB7C4F4D137279F5FF5D0CA1AD24A0 /* Pods-NumberKeyboardViewDemo.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8B61DA68DA3DEA64D26485D545131C7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A205D9F495DCB2E008B358065B20E883 /* TurtleBezierPath.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TurtleBezierPath/TurtleBezierPath-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8FA33FE2B6D43C24E15791EAC40C9C53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 206242ADAFA7958271FBA12069858A4A /* CYRKeyboardButton.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CYRKeyboardButton/CYRKeyboardButton-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9EB645C612834738B99727720210C23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A10713783D7FB12D5CCEBA279A529C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 206242ADAFA7958271FBA12069858A4A /* CYRKeyboardButton.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CYRKeyboardButton/CYRKeyboardButton-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E39CD1E764776175CB82EEC82A6C9948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		236C89D7B318B58DD96D3A2E847BEA97 /* Build configuration list for PBXNativeTarget "TurtleBezierPath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B61DA68DA3DEA64D26485D545131C7A /* Debug */,
+				0585048E43C17589258EBE87AB5F2991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EB645C612834738B99727720210C23E /* Debug */,
+				E39CD1E764776175CB82EEC82A6C9948 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFA21DE09B2424FE95759D75C80930F5 /* Build configuration list for PBXNativeTarget "CYRKeyboardButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FA33FE2B6D43C24E15791EAC40C9C53 /* Debug */,
+				A10713783D7FB12D5CCEBA279A529C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD178DE2ED1F5F155297CB5A639849B /* Build configuration list for PBXNativeTarget "Pods-NumberKeyboardViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				215A3212E30E81E6C092EC3D5B7B2B27 /* Debug */,
+				89DF8923A69C3E4685939720113729A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

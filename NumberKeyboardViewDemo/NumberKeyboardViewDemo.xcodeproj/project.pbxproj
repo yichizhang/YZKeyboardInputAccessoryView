@@ -165,6 +165,7 @@
 				1273C4141AAE4B0B0015744D /* Frameworks */,
 				1273C4151AAE4B0B0015744D /* Resources */,
 				CB6A45F44D1D381A743AF279 /* Copy Pods Resources */,
+				5D4EE748E4DB22AB70713185 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +254,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5D4EE748E4DB22AB70713185 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NumberKeyboardViewDemo/Pods-NumberKeyboardViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7883BCD07EF7DA8292C890C1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

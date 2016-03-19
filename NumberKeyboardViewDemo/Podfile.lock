@@ -1,5 +1,5 @@
 PODS:
-  - CYRKeyboardButton (0.5.2):
+  - CYRKeyboardButton (0.5.3):
     - TurtleBezierPath
   - TurtleBezierPath (1.0)
 
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - CYRKeyboardButton
 
 SPEC CHECKSUMS:
-  CYRKeyboardButton: b7db9a30c1a4f3d09b9115a21494e230080f5657
+  CYRKeyboardButton: 113e92f83c3f991652b64500a22cb85b37bf275d
   TurtleBezierPath: 680f51b8ed5a27c652974f1b89782c8e2146116b
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.39.0
