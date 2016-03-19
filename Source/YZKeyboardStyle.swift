@@ -19,7 +19,7 @@ public class YZKeyboardStyle : NSObject {
     public class func drawArrowLight() {
 
         //// Bezier 2 Drawing
-        var bezier2Path = UIBezierPath()
+        let bezier2Path = UIBezierPath()
         bezier2Path.moveToPoint(CGPointMake(1, 2))
         bezier2Path.addLineToPoint(CGPointMake(9, 2))
         bezier2Path.addLineToPoint(CGPointMake(5, 6))
@@ -34,7 +34,7 @@ public class YZKeyboardStyle : NSObject {
         let color = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
 
         //// Bezier 2 Drawing
-        var bezier2Path = UIBezierPath()
+        let bezier2Path = UIBezierPath()
         bezier2Path.moveToPoint(CGPointMake(1, 2))
         bezier2Path.addLineToPoint(CGPointMake(9, 2))
         bezier2Path.addLineToPoint(CGPointMake(5, 6))

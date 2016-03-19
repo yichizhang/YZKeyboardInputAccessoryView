@@ -121,7 +121,7 @@ class YZNumberKeyboardInputAccessoryView : YZKeyboardInputAccessoryView {
 		super.init(keys: keys)
 	}
 
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
 }
@@ -159,16 +159,16 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	}
 
 	// MARK: Attach to a text input.	
-	func attachTo(#textInput:UITextInput) {
+	func attachTo(textInput textInput:UITextInput) {
 		textField = nil
 		textView = nil
 		if(textInput.isKindOfClass(UITextField)) {
-			var t = textInput as! UITextField
+			let t = textInput as! UITextField
 			t.inputAccessoryView = self
 			textField = t
 		}
 		else if(textInput.isKindOfClass(UITextView)) {
-			var t = textInput as! UITextView
+			let t = textInput as! UITextView
 			t.inputAccessoryView = self
 			textView = t
 		}
@@ -212,7 +212,7 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
 	}
 	
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
 	
@@ -242,7 +242,7 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 		let inset = c.keyboardInset
 		
 		var lastX:CGFloat = 0
-		for (index, keyButton) in enumerate(numberKeyButtons) {
+		for (index, keyButton) in (numberKeyButtons).enumerate() {
 			let i = CGFloat(index)
 			let x = (c.spaceInBetweenKeys + c.keySize.width) * i
 			keyButton.frame = CGRect(
@@ -261,7 +261,7 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	
 	func configureHeightConstraint() {
 		
-		if let viewConstraints = constraints() as? [NSLayoutConstraint] {
+		if let viewConstraints = constraints as? [NSLayoutConstraint] {
 			if let constraint = viewConstraints.first {
 				constraint.constant = YZKeyboardInputAccessoryView.heightWith(keyboardConstants: keyboardConstants, extraHeight: dismissTouchAreaHeight)
 			}
@@ -280,7 +280,7 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	
 	private func configureKeyboardConstantsAndViewHeightUsing(notification:NSNotification) {
 		if let info = notification.userInfo {
-			if let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
+			if let keyboardSize = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size {
 				keyboardConstants = YZKeyboardConstants(keyboardSize: keyboardSize, useCalculatedWidth: false)
 			}
 		}
