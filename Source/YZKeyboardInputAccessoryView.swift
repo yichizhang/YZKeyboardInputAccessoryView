@@ -235,9 +235,7 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 			width: bounds.width,
 			height: dismissTouchAreaHeight
 		)
-		
-		let keyCount = CGFloat(numberKeyButtons.count)
-		
+				
 		let c = keyboardConstants
 		let inset = c.keyboardInset
 		
@@ -260,12 +258,7 @@ class YZKeyboardInputAccessoryView : UIView, UIInputViewAudioFeedback {
 	}
 	
 	func configureHeightConstraint() {
-		
-		if let viewConstraints = constraints as? [NSLayoutConstraint] {
-			if let constraint = viewConstraints.first {
-				constraint.constant = YZKeyboardInputAccessoryView.heightWith(keyboardConstants: keyboardConstants, extraHeight: dismissTouchAreaHeight)
-			}
-		}
+        constraints.first?.constant = YZKeyboardInputAccessoryView.heightWith(keyboardConstants: keyboardConstants, extraHeight: dismissTouchAreaHeight)
 	}
 	
 	// MARK: Keyboard show
